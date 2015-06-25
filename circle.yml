@@ -38,14 +38,10 @@ dependencies:
     # Install Meteor if the cache didn't restore it
     - if [ ! -e ~/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
 
-    # -- CACHE CUCUMBER NPM MODULES --
+    # -- INSTALL CUCUMBER NPM MODULES --
     # Install package dependencies for Cucumber support files
     - npm install --production:
         pwd: tests/cucumber
-
-    # -- CACHE CUCUMBER NPM MODULES --
-    # Install Meteor and Cucumber related dependencies
-    - node ./tests/ci/install_runtime_dependencies.js
 
 test:
 
